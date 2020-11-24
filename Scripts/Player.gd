@@ -1,8 +1,14 @@
-extends "res://Scripts/AbstractClass/GameObject.gd"
+extends GameObject
+
+
+class_name Player
 
 var bomb = preload("res://Scenes/Prefabs/Bomb.tscn");
-func _ready():
+
+func _init(var _heath = 50,var _speed = 50).(_heath,_speed):
+	pass
 	
+func _ready():
 	pass # Replace with function body.
 	
 func flip():

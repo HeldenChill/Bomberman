@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "GameObject",
+"class": "AbstractEnemy",
+"language": "GDScript",
+"path": "res://Scripts/AbstractClass/AbstractEnemy.gd"
+}, {
 "base": "Node2D",
 "class": "Bomb",
 "language": "GDScript",
@@ -18,10 +23,23 @@ _global_script_classes=[ {
 "class": "Explosion",
 "language": "GDScript",
 "path": "res://Scripts/ExplosionScripts.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "GameObject",
+"language": "GDScript",
+"path": "res://Scripts/AbstractClass/GameObject.gd"
+}, {
+"base": "GameObject",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/Player.gd"
 } ]
 _global_script_class_icons={
+"AbstractEnemy": "",
 "Bomb": "",
-"Explosion": ""
+"Explosion": "",
+"GameObject": "",
+"Player": ""
 }
 
 [application]

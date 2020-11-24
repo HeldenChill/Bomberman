@@ -1,25 +1,23 @@
-extends "res://Scripts/AbstractClass/GameObject.gd"
+extends AbstractEnemy
 
-var chuyendong = Vector2()
-var faceRight = true;
-var SPEED = 60
-var direction = 1
+
+func _init(var _heath = 50,var _speed = 50).(_heath,_speed):
+	faceRight = true;
+	direction = 1;
+	pass
 
 func _physics_process(delta):
 	move()
-	
 	move_and_slide(chuyendong)
-	
-	if is_on_wall() :
+
+func move():
+	if (is_on_wall()) : #if kinematic body is collide with wall
 		direction *= -1
 		faceRight = false
-		pass
-		
+		pass	
 	if(!faceRight):
 		faceRight = true
 		$FlipComponents/Sprite.scale.x *= -1
-	
-
-func move():
-	chuyendong.x = SPEED * direction
+		
+	chuyendong.x = speed * direction
 	pass

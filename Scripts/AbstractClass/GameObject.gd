@@ -1,11 +1,18 @@
 extends KinematicBody2D
 
+
+class_name GameObject
 var heath : int setget setHealth,getHealth;
 var speed : int setget setSpeed,getSpeed;
 var body : PhysicsBody2D;
 var anim : AnimationNodeStateMachinePlayback;
 var flipComponent : Node2D;
 var originScale : Vector2
+
+func _init(var _heath:int,var _speed:int):
+	heath = _heath;
+	speed = _speed;
+	pass
 
 func _ready():
 	body = get_node(".");
@@ -14,7 +21,7 @@ func _ready():
 	speed = 100;
 	originScale = flipComponent.scale;
 	pass
-	
+
 func getHealth()-> int:
 	return heath;
 	pass
@@ -34,8 +41,3 @@ func setSpeed(var speed : int):
 func move():
 	pass	
 	
-func _physics_process(delta):
-	pass
-
-func _process(delta):
-	pass
