@@ -3,6 +3,7 @@ extends GameObject
 
 class_name Player
 
+var path:PoolVector2Array setget setPath;
 var bomb = preload("res://Scenes/Prefabs/Bomb.tscn");
 
 func _init(var _heath = 50,var _speed = 50).(_heath,_speed):
@@ -10,7 +11,7 @@ func _init(var _heath = 50,var _speed = 50).(_heath,_speed):
 	
 func _ready():
 	pass # Replace with function body.
-	
+
 func flip():
 	flipComponent.scale.x *= -1;
 	pass
@@ -47,6 +48,14 @@ func move()->Vector2:
 	if(Input.is_action_pressed("S")):
 		vecMove = Vector2(0,speed)
 		pass	
+	
+	#move for navigation
+	if(path.size() > 0):
+		if(global_position.distance_to(path[0]) > 5):
+			vecMove = path[0]-global_position;
+			vecMove = vecMove.normalized()*speed;
+		else:
+			path.remove(0);
 	return vecMove
 	pass
 	
@@ -56,5 +65,12 @@ func _process(delta):
 		anim.travel("Run");
 		body.move_and_slide(move());
 	else:
-		anim.travel("Idle");	
+		anim.travel("Idle");		
+		
+	pass
+
+func setPath(value : PoolVector2Array):
+	path = value;
+	if(path.size() == 0):
+		return	
 	pass
