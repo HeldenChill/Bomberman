@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Prefabs/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Prefabs/Enemy1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Prefabs/Enemy/Enemy1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Prefabs/Enemy/Enemy2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Control.gd" type="Script" id=5]
 
 [node name="Scene1" type="Node2D"]
@@ -22,8 +23,12 @@ collision_mask = 6
 position = Vector2( 513.503, 301.707 )
 editor_draw_limits = true
 
-[node name="AbstractEnemy2" parent="." instance=ExtResource( 3 )]
+[node name="Enemy12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 486.974, 343.39 )
 
-[node name="AbstractEnemy" parent="." instance=ExtResource( 3 )]
+[node name="Enemy1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 423.431, 272.506 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 580.32, 89.408 )
+collision/safe_margin = 0.001

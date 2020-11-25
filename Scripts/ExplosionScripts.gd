@@ -21,8 +21,8 @@ func _init(var _levelDamage:int = 3):
 	pass
 
 func _ready():
-	timeCreateFlame = 0.4;
-	oldTime = timeCreateFlame * (levelDamage + 1)
+	timeCreateFlame = 0.01;
+	oldTime = timeCreateFlame * (levelDamage + 1) + 0.5;
 	$Timer.start(oldTime);	#set clock
 	pass  
 

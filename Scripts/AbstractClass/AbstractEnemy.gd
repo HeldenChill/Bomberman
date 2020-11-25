@@ -12,6 +12,6 @@ func _init(var _heath:int,var _speed:int).(_heath,_speed):
 func takeDamage(var damage:int)->void:
 	heath = heath - damage;
 	pass
-	
 
-
+func anim():
+	pass
