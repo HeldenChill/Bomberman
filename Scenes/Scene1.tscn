@@ -30,5 +30,4 @@ position = Vector2( 486.974, 343.39 )
 position = Vector2( 423.431, 272.506 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 580.32, 89.408 )
-collision/safe_margin = 0.001
+position = Vector2( 1085.3, 604.2 )

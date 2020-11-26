@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/AbstractClass/AbstractEnemy.gd" type="Script" id=1]
 
@@ -7,6 +7,8 @@
 [sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [sub_resource type="CapsuleShape2D" id=3]
+
+[sub_resource type="CapsuleShape2D" id=4]
 
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -24,3 +26,10 @@ parameters/playback = SubResource( 2 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 4 )
+disabled = true

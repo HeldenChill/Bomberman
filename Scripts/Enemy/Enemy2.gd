@@ -11,23 +11,26 @@ var path : PoolVector2Array
 func _ready():
 	control = get_parent();
 	player = get_parent().get_child(2);
-	followPlayer();
-
-func followPlayer()->void:
 	path = control.getPathBetween(global_position,player.global_position);
-	pass
-	
-func move():
-	var vecMove : Vector2
+
+func followPlayer()->Vector2:
+	velocity = Vector2.ZERO
 	if(path.size() > 0):
 		if(global_position.distance_to(path[0]) > disMaxWithPath): 
-			vecMove = path[0]-global_position;
+			velocity = path[0]-global_position;
 		else:
 			path.remove(0);
 			
 	
-	vecMove = vecMove.normalized()*speed;
-	return vecMove	
+	velocity = velocity.normalized()*speed;
+	return velocity	
+	pass
+	
+func move()->Vector2:
+	return followPlayer();
+	pass
+	
+	
 	
 func _physics_process(delta):
-	move_and_slide(move());	
+	velocity = move_and_slide(move());	

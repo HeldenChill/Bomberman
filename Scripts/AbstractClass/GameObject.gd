@@ -26,7 +26,7 @@ func getHealth()-> int:
 	return heath;
 	pass
 
-func setHealth(var health : int):
+func setHealth(var health : int)->void:
 	get_node(".").health = health;
 	pass
 
@@ -34,10 +34,11 @@ func getSpeed()-> int:
 	return speed;
 	pass	
 	
-func setSpeed(var speed : int):
+func setSpeed(var speed : int)->void:
 	get_node(".").speed = speed;
 	pass
 
-func move():
+func move()->Vector2:
+	return Vector2.ZERO;
 	pass	
 	
