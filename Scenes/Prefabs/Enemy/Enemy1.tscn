@@ -18,5 +18,16 @@ hframes = 8
 [node name="AnimationTree" parent="FlipComponents" index="2"]
 parameters/playback = SubResource( 1 )
 
+[node name="Right" type="RayCast2D" parent="FlipComponents" index="3"]
+position = Vector2( 0, -3 )
+enabled = true
+cast_to = Vector2( 16, 0 )
+collision_mask = 6
+
 [node name="Body" parent="." index="1"]
-position = Vector2( -0.237831, -5.94565 )
+position = Vector2( -0.237831, -4.72479 )
+
+[node name="Area2D" parent="." index="2"]
+visible = false
+collision_layer = 2
+collision_mask = 7

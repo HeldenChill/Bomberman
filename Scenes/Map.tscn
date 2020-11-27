@@ -427,7 +427,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 0/shapes = [  ]
 0/z_index = 0
 
-[node name="Map2" type="Node2D"]
+[node name="Map" type="Node2D"]
 
 [node name="Layer1" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )

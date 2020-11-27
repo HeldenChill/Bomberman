@@ -41,4 +41,7 @@ func setSpeed(var speed : int)->void:
 func move()->Vector2:
 	return Vector2.ZERO;
 	pass	
-	
+
+func die()->void:
+	queue_free();
+	pass

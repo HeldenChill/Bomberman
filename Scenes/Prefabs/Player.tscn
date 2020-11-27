@@ -131,6 +131,8 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 
 [sub_resource type="CapsuleShape2D" id=9]
+radius = 11.1366
+height = 16.4625
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 5

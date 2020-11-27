@@ -30,7 +30,10 @@ func _input(event):
 	if(Input.is_action_just_pressed("Space")):
 		var bombObj = bomb.instance();
 		bombObj._init(1,3);
-		bombObj.global_position = global_position;
+		var posOfBomb : Vector2;
+		posOfBomb.x = int(global_position.x/32)*32+16;
+		posOfBomb.y = int(global_position.y/32)*32+16;
+		bombObj.global_position = posOfBomb;
 		get_tree().get_root().add_child(bombObj);
 	pass
 	
@@ -50,12 +53,13 @@ func move()->Vector2:
 		pass	
 	
 	#move for navigation
-	if(path.size() > 0):
-		if(global_position.distance_to(path[0]) > 5):
-			vecMove = path[0]-global_position;
-			vecMove = vecMove.normalized()*speed;
-		else:
-			path.remove(0);
+	#if(path.size() > 0):
+		
+	#	if((path[0]-global_position).length() > 5):
+	#		vecMove = path[0]-global_position;
+	#	else:
+	#		path.remove(0);
+	vecMove = vecMove.normalized()*speed;
 	return vecMove
 	pass
 	
@@ -73,4 +77,7 @@ func setPath(value : PoolVector2Array):
 	path = value;
 	if(path.size() == 0):
 		return	
+	for i in range(path.size()):
+		path[i].x = int(path[i].x/32)*32+16;
+		path[i].y = int(path[i].y/32)*32+16;
 	pass

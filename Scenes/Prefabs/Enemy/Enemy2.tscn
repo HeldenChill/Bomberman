@@ -32,6 +32,7 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="Area2D" parent="." index="2"]
+visible = false
 position = Vector2( 0.214638, -6.2245 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]

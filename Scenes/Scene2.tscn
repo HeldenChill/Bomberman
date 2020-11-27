@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Map2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Control.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Prefabs/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Prefabs/Enemy/Enemy1.tscn" type="PackedScene" id=5]
+
+[node name="Scene2" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="Map" parent="Navigation2D" instance=ExtResource( 1 )]
+
+[node name="Line2D" type="Line2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 47.1474, 56.1847 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Enemy1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 460.986, 51.6836 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 369.332, 115.15 )
+scale = Vector2( 0.8, 0.8 )

@@ -12,7 +12,6 @@ func  _unhandled_input(event: InputEvent) -> void:
 	pass
 	
 	var newPath = getPathBetween($Player.global_position,event.global_position);
-	print(newPath,$Player.global_position,event.global_position);
 	$Line2D.points = newPath;
 	$Player.setPath(newPath);
 
