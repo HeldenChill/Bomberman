@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Prefabs/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Control.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Control.gd" type="Script" id=5]
 
 [node name="Scene1" type="Node2D"]
 script = ExtResource( 5 )

@@ -5,6 +5,7 @@ var animPlayer : AnimationPlayer
 var numberOfOldChild : int;
 var timer : Timer;
 var allFlame;
+var isCollideWall : bool = false;
 func _init():
 	pass
 func _ready():
@@ -16,6 +17,8 @@ func _ready():
 func _on_DamageArea_body_entered(body):
 	if(body is AbstractEnemy):
 		body.die();
+	if(body is Brick):
+		body.breaked();
 	pass # Replace with function body.
 
 func runAnimExplode():

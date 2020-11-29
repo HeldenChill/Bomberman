@@ -24,10 +24,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/BombScripts.gd"
 }, {
+"base": "StaticBody2D",
+"class": "Brick",
+"language": "GDScript",
+"path": "res://Scripts/Brick.gd"
+}, {
 "base": "Node2D",
 "class": "ControlScene",
 "language": "GDScript",
-"path": "res://Scenes/Control.gd"
+"path": "res://Scripts/Control.gd"
 }, {
 "base": "AbstractExplode",
 "class": "Explosion",
@@ -39,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/AbstractClass/GameObject.gd"
 }, {
+"base": "Node2D",
+"class": "GenerateMap",
+"language": "GDScript",
+"path": "res://Scripts/GenerateMap.gd"
+}, {
 "base": "GameObject",
 "class": "Player",
 "language": "GDScript",
@@ -48,9 +58,11 @@ _global_script_class_icons={
 "AbstractEnemy": "",
 "AbstractExplode": "",
 "Bomb": "",
+"Brick": "",
 "ControlScene": "",
 "Explosion": "",
 "GameObject": "",
+"GenerateMap": "",
 "Player": ""
 }
 
