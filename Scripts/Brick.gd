@@ -33,6 +33,8 @@ func breaked():
 	else :
 		itemObj = flameUp.instance()
 		pass
+	itemObj.scale.x = 2
+	itemObj.scale.y = 2
 	itemObj.global_position = global_position
 	get_tree().get_root().add_child(itemObj)
 	die();
