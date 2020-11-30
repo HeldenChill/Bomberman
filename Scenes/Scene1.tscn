@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Prefabs/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Prefabs/Enemy/Enemy2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Control/GUIGame/GUIGame.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy4.tscn" type="PackedScene" id=7]
@@ -37,13 +36,6 @@ __meta__ = {
 
 [node name="Control" parent="Player" instance=ExtResource( 6 )]
 
-[node name="Enemy2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1085.3, 604.2 )
-
-[node name="Enemy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 848.406, 312.054 )
-collision_layer = 1
-
 [node name="Collectable" parent="." instance=ExtResource( 8 )]
 position = Vector2( 452.627, 733.351 )
 z_index = 0
@@ -65,3 +57,6 @@ position = Vector2( 388.26, 365.33 )
 
 [node name="ShootingMonster" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2024.05, 796.768 )
+
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1275.47, 846.341 )

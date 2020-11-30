@@ -4,30 +4,25 @@
 [ext_resource path="res://Graphics/Items/powerup_wallpass.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Enemy/ShootingMonster.gd" type="Script" id=3]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 129.91
+[sub_resource type="CircleShape2D" id=2]
+radius = 174.639
 
 [node name="ShootingMonster" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="FlipComponents" index="0"]
-position = Vector2( 0, 0 )
-scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="AnimationTree" parent="FlipComponents" index="2"]
-parameters/playback = SubResource( 2 )
-
-[node name="Body" parent="." index="1"]
-position = Vector2( 0, 0 )
+parameters/playback = SubResource( 1 )
 
 [node name="ChasingArea" type="Area2D" parent="." index="4"]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChasingArea" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="ShootCoolDown" type="Timer" parent="." index="5"]
 autostart = true
