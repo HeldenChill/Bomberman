@@ -24,6 +24,7 @@ func _init(_levelDamage:int = 5,var _allFlame = []):
 
 func _ready():
 	timeCreateFlame = 0.001;
+	$Sprite.texture.resource_local_to_scene = true;
 	oldTime = timeCreateFlame * (levelDamage + 1) + 3;
 	$Timer.start(oldTime);	#set clock
 	allFlame.push_back(get_node("."));
@@ -38,6 +39,7 @@ func _process(delta):
 		numberOfCurrentFlame += 1;
 		createAroundFlame();
 	elif(numberOfCurrentFlame == levelDamage):
+		print(allFlame.size());
 		for i in allFlame:
 			i.runAnimExplode();
 			pass	

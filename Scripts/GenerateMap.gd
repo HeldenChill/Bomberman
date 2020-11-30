@@ -82,7 +82,7 @@ func randomPositionBrick():
 		randomize();
 		var pos = Vector2(randi() % int(sizeMapCell.x),randi() % int(sizeMapCell.y));
 		if(layer1.get_cell(pos.x,pos.y) == -1):
-			if(!isDuplicatedInBrick(pos)):
+			if(!isDuplicatedInBrick(pos) && pos != Vector2(1,1)):
 				brickPosition.push_back(pos);
 				numOfBrick += 1;
 			else:

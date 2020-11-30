@@ -4,7 +4,7 @@ extends GameObject
 class_name Player
 
 var path:PoolVector2Array setget setPath;
-var bomb = preload("res://Scenes/Prefabs/Bomb.tscn");
+var bomb = preload("res://Scenes/Prefabs/Bomb.tscn").duplicate(true);
 
 func _init(var _heath = 50,var _speed = 50).(_heath,_speed):
 	pass

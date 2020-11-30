@@ -1,6 +1,6 @@
 extends Node2D
 
-var explodeObject = preload("res://Scenes/Prefabs/Explosion.tscn")
+var explodeObject = preload("res://Scenes/Prefabs/Explosion.tscn");
 
 class_name Bomb
 var allFlame = []

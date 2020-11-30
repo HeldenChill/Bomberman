@@ -3,16 +3,56 @@
 [ext_resource path="res://Graphics/Classics/explosion_horizontal_right_last-sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Prefabs/Abstract/AbstractExplode.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/FlameScripts.gd" type="Script" id=3]
-[ext_resource path="res://Graphics/Animations/ExplodeOfTopFlame.tres" type="Animation" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "Explode"
+length = 0.9
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture:load_path")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "res://.import/explosion_horizontal_right_last-sheet.png-7877017023c0086f5d3f48bea6072358.stex", "res://.import/explosion_horizontal_right_last1-sheet.png-dae188f07bb403642a99e04323982311.stex" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.35, 0.65 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 8 )
 
 [node name="TopFlame" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 
 [node name="AnimationPlayer" parent="." index="0"]
-anims/Explode = ExtResource( 4 )
+anims/Explode = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 texture = ExtResource( 1 )
@@ -29,5 +69,5 @@ collision_mask = 4
 [node name="DamageArea" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
