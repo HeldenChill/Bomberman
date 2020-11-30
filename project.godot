@@ -69,7 +69,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Bomberman"
-run/main_scene="res://Scenes/Scene1.tscn"
+run/main_scene="res://Scenes/Scene2.tscn"
 config/icon="res://icon.png"
 
 [input]
