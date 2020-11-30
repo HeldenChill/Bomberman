@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Control/Menu/NewGameButton.tscn" type="PackedScene" id=1]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -6,3 +8,13 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MenuButton" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.405
+anchor_top = 0.716
+anchor_right = 0.624
+anchor_bottom = 0.791
+margin_left = -0.127686
+margin_top = -0.0353699
+margin_right = -0.383667
+margin_bottom = -0.0353699

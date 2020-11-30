@@ -124,7 +124,7 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 
 [node name="Layer1" type="TileMap" parent="."]
-z_index = 6
+z_index = 10
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 4

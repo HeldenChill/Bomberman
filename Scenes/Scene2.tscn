@@ -20,6 +20,16 @@ script = ExtResource( 2 )
 position = Vector2( 47.1474, 56.1847 )
 scale = Vector2( 0.8, 0.8 )
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_left = 0
+limit_top = 0
+limit_right = 1500
+limit_bottom = 1000
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
 [node name="Enemy1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 460.986, 51.6836 )
 scale = Vector2( 0.8, 0.8 )
