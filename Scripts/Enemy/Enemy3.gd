@@ -1,22 +1,15 @@
 extends AbstractEnemy
 
+class_name RandomMoveEnemy
 var choice
-var rayRight : RayCast2D
-var rayLeft : RayCast2D
-var rayUp : RayCast2D
-var rayDown : RayCast2D
 
-func _init(var _heath = 50, var _speed = 20) . (_heath, _speed) :
+func _init(var _heath = 50, var _speed = 60) . (_heath, _speed) :
 	faceRight = true
 	direction = 1
 	pass
 	
 
 func _ready():
-	rayRight = $RayRight;
-	rayLeft = $RayLeft;
-	rayDown = $RayDown;
-	rayUp = $RayUp;
 	$Timer.start(1);
 	velocity = Vector2.ZERO
 	pass
@@ -55,7 +48,6 @@ func move()->Vector2 :
 		if((int(global_position.y) - 16) % 32 == 0):
 			choice = random()
 			chooseDirect()
-			print("ok")
 	return velocity * speed
 	pass
 

@@ -1,15 +1,13 @@
 extends AbstractExplode
 
-var middleFlame = load("res://Scenes/Prefabs/ExplosionFlame/MiddleFlame.tscn")
-var topFlame = load("res://Scenes/Prefabs/ExplosionFlame/TopFlame.tscn")
+var middleFlame = load("res://Scenes/Prefabs/ExplosionFlame/MiddleFlame.tscn");
+var topFlame = load("res://Scenes/Prefabs/ExplosionFlame/TopFlame.tscn");
 
 var degree : int;
 var levelDamage : int;
 
-func _ready():
-	pass 
-
 func init(var _degree,var _levelDamage,var _allFlame):
+	$Sprite.texture.resource_local_to_scene = true;
 	setRotation(_degree)
 	levelDamage = _levelDamage
 	allFlame = _allFlame
@@ -41,6 +39,5 @@ func createFlame(var _position : Vector2)->void:
 			return 
 			pass	
 	pass
-
 
 

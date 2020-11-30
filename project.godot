@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/AbstractClass/AbstractExplode.gd"
 }, {
 "base": "Node2D",
+"class": "AbstractItem",
+"language": "GDScript",
+"path": "res://Scripts/AbstractClass/AbstractItem.gd"
+}, {
+"base": "Node2D",
 "class": "Bomb",
 "language": "GDScript",
 "path": "res://Scripts/BombScripts.gd"
@@ -49,21 +54,34 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GenerateMap.gd"
 }, {
+"base": "Button",
+"class": "LoadScene",
+"language": "GDScript",
+"path": "res://Scripts/Control/Menu/MenuButtonScript.gd"
+}, {
 "base": "GameObject",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
+}, {
+"base": "AbstractEnemy",
+"class": "RandomMoveEnemy",
+"language": "GDScript",
+"path": "res://Scripts/Enemy/Enemy3.gd"
 } ]
 _global_script_class_icons={
 "AbstractEnemy": "",
 "AbstractExplode": "",
+"AbstractItem": "",
 "Bomb": "",
 "Brick": "",
 "ControlScene": "",
 "Explosion": "",
 "GameObject": "",
 "GenerateMap": "",
-"Player": ""
+"LoadScene": "",
+"Player": "",
+"RandomMoveEnemy": ""
 }
 
 [application]

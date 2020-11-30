@@ -2,7 +2,7 @@ extends AbstractEnemy
 
 #class_name Enemy1
 var rayRight : RayCast2D
-func _init(var _heath = 50,var _speed = 50).(_heath,_speed):
+func _init(var _heath = 50,var _speed = 60).(_heath,_speed):
 	faceRight = true;
 	direction = 1;
 	pass

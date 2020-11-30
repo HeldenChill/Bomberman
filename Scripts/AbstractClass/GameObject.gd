@@ -17,8 +17,7 @@ func _init(var _heath:int,var _speed:int):
 func _ready():
 	body = get_node(".");
 	flipComponent = $FlipComponents
-	anim = $FlipComponents/AnimationTree.get("parameters/playback")
-	speed = 100;
+	anim = $FlipComponents/AnimationTree.get("parameters/playback");
 	originScale = flipComponent.scale;
 	pass
 

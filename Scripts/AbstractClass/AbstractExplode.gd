@@ -2,6 +2,7 @@ extends Sprite
 class_name AbstractExplode
 
 var animPlayer : AnimationPlayer
+var anim : AnimationTree
 var numberOfOldChild : int;
 var timer : Timer;
 var allFlame;
@@ -22,7 +23,7 @@ func _on_DamageArea_body_entered(body):
 	pass # Replace with function body.
 
 func runAnimExplode():
-	animPlayer.play("Explode")
+	animPlayer.play("Explode");	
 	pass
 
 func _on_Timer_timeout():

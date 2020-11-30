@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Prefabs/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Prefabs/Items/SpeedItem.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Prefabs/Enemy/Enemy3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Control/GUIGame/GUIGame.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Prefabs/Enemy/Enemy4.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Prefabs/Items/SpeedItem.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Prefabs/Items/BombItem.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Prefabs/Items/FlameItem.tscn" type="PackedScene" id=10]
 
 [node name="Scene1" type="Node2D"]
 script = ExtResource( 5 )
@@ -18,24 +21,39 @@ script = ExtResource( 5 )
 [node name="Line2D" type="Line2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 90.6717, 94.3717 )
+position = Vector2( 418.02, 547.364 )
 collision_mask = 6
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 513.503, 301.707 )
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 editor_draw_limits = true
 
-[node name="Enemy12" parent="." instance=ExtResource( 3 )]
-position = Vector2( 486.974, 343.39 )
-
-[node name="Enemy1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 423.431, 272.506 )
+[node name="Control" parent="Player" instance=ExtResource( 6 )]
 
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1085.3, 604.2 )
 
-[node name="Items" parent="." instance=ExtResource( 6 )]
-position = Vector2( 177.157, 211.113 )
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 848.406, 312.054 )
+collision_layer = 1
 
-[node name="Enemy" parent="Items" instance=ExtResource( 7 )]
-position = Vector2( 687.592, 33.903 )
+[node name="Collectable" parent="." instance=ExtResource( 8 )]
+position = Vector2( 452.627, 733.351 )
+z_index = 0
+
+[node name="Collectable2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 479.03, 909.945 )
+z_index = 0
+
+[node name="Collectable3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 689.934, 354.651 )
+z_index = 0
+
+[node name="Collectable4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 385.591, 749.764 )
+z_index = 0
+
+[node name="Enemy1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 388.26, 365.33 )

@@ -6,7 +6,7 @@ class_name Player
 var path:PoolVector2Array setget setPath;
 var bomb = preload("res://Scenes/Prefabs/Bomb.tscn");
 
-func _init(var _heath = 50,var _speed = 50).(_heath,_speed):
+func _init(var _heath = 50,var _speed = 100).(_heath,_speed):
 	pass
 	
 func _ready():
@@ -59,7 +59,8 @@ func move()->Vector2:
 	#		vecMove = path[0]-global_position;
 	#	else:
 	#		path.remove(0);
-	vecMove = vecMove.normalized()*speed;
+	vecMove = vecMove.normalized() * speed;
+
 	return vecMove
 	pass
 	

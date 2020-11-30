@@ -1,21 +1,22 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Prefabs/Abstract/AbstractEnemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Graphics/SpritesSheet/Enemy/kondoria_right1.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Enemy/Enemy4.gd" type="Script" id=3]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.52769, 8.15131 )
+extents = Vector2( 32.2617, 33.0238 )
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 78.0592
+radius = 100.197
 
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="FlipComponents" index="0"]
+position = Vector2( 1, -1.5 )
 texture = ExtResource( 2 )
 
 [node name="AnimationTree" parent="FlipComponents" index="2"]
@@ -25,6 +26,7 @@ parameters/playback = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="ChasingArea" type="Area2D" parent="." index="3"]
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChasingArea" index="0"]
 shape = SubResource( 3 )

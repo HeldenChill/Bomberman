@@ -8,7 +8,7 @@ func _init(var _heath = 50,var _speed = 50).(_heath,_speed):
 
 func _physics_process(delta):
 	move()
-	move_and_slide(chuyendong)
+	move_and_slide(velocity)
 
 func move():
 	if (is_on_wall()) : #if kinematic body is collide with wall

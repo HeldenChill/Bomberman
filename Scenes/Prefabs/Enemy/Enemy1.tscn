@@ -22,7 +22,7 @@ parameters/playback = SubResource( 1 )
 position = Vector2( 0, -3 )
 enabled = true
 cast_to = Vector2( 16, 0 )
-collision_mask = 6
+collision_mask = 4
 
 [node name="Body" parent="." index="1"]
 position = Vector2( -0.237831, -4.72479 )
