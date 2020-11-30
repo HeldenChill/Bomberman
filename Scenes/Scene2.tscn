@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/MapGenerate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Prefabs/Enemy/Enemy3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Control/GUIGame/GUIGame.tscn" type="PackedScene" id=7]
 
 [node name="Scene2" type="Node2D"]
 script = ExtResource( 2 )
@@ -29,6 +30,8 @@ limit_right = 1500
 limit_bottom = 1000
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+
+[node name="Control" parent="Player" instance=ExtResource( 7 )]
 
 [node name="Enemy1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 460.986, 51.6836 )

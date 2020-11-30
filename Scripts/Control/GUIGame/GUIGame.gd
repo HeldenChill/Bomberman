@@ -8,6 +8,6 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	var canvasTranform = get_viewport().canvas_transform;
-	transform = canvasTranform;
+#	var canvasTranform = get_viewport().global_canvas_transform;
+#	transform = canvasTranform;
 	pass
