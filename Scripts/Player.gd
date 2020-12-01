@@ -3,6 +3,9 @@ extends GameObject
 
 class_name Player
 
+var levelOfBomb = 2;
+var timeOfBomb = 2;
+var numberOfBomb = 1;
 var path:PoolVector2Array setget setPath;
 var bomb = preload("res://Scenes/Prefabs/Bomb.tscn");
 
@@ -27,14 +30,15 @@ func _input(event):
 			flip();
 			pass
 		pass	
-	if(Input.is_action_just_pressed("Space")):
+	if(Input.is_action_just_pressed("Space") && numberOfBomb > 0):
 		var bombObj = bomb.instance();
-		bombObj._init(1,3);
+		bombObj._init(timeOfBomb,levelOfBomb);
 		var posOfBomb : Vector2;
 		posOfBomb.x = int(global_position.x/32)*32+16;
 		posOfBomb.y = int(global_position.y/32)*32+16;
 		bombObj.global_position = posOfBomb;
 		get_tree().get_root().add_child(bombObj);
+		numberOfBomb -= 1;
 	pass
 	
 func move()->Vector2:

@@ -25,7 +25,7 @@ func _init(_levelDamage:int = 5,var _allFlame = []):
 func _ready():
 	timeCreateFlame = 0.001;
 	$Sprite.texture.resource_local_to_scene = true;
-	oldTime = timeCreateFlame * (levelDamage + 1) + 3;
+	oldTime = timeCreateFlame * (levelDamage) + 1;
 	$Timer.start(oldTime);	#set clock
 	allFlame.push_back(get_node("."));
 	pass  
@@ -94,6 +94,10 @@ func createAroundFlame():
 	pass
 
 func _on_Timer_timeout():
+	
+	var player = get_tree().get_root().get_child(0).get_child(2);
+	if(player != null):
+		player.numberOfBomb += 1;
 	queue_free() 	#destroy
 	pass 
 

@@ -9,9 +9,10 @@ var disMaxWithPath = 20;
 var path : PoolVector2Array
 
 func _ready():
-	control = get_parent();
-	player = get_parent().get_child(2);
-	path = control.getPathBetween(global_position,player.global_position);
+	control = get_tree().get_root().get_child(0);
+	player = control.get_child(2);
+	$Timer.start(2);
+	
 
 func followPlayer()->Vector2:
 	velocity = Vector2.ZERO
@@ -34,3 +35,13 @@ func move()->Vector2:
 	
 func _physics_process(delta):
 	velocity = move_and_slide(move());	
+
+
+func _on_Timer_timeout():
+	if(player != null && player is Player):
+		path = control.getPathBetween(global_position,player.global_position);
+	pass # Replace with function body.
+	
+func _on_Area2D_body_entered(body):
+	._on_Area2D_body_entered(body);
+	pass 

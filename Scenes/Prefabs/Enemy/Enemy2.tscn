@@ -7,8 +7,8 @@
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 9.72588
-height = 16.3693
+radius = 7.28166
+height = 9.16689
 
 [node name="Enemy2" instance=ExtResource( 1 )]
 z_index = 5
@@ -17,8 +17,8 @@ collision/safe_margin = 0.001
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="FlipComponents" index="0"]
-position = Vector2( -0.614716, -19.7921 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 0, -12 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 2 )
 hframes = 8
 
@@ -26,37 +26,31 @@ hframes = 8
 parameters/playback = SubResource( 1 )
 
 [node name="Body" parent="." index="1"]
-position = Vector2( 0.614723, -6.14711 )
 rotation = 1.5708
 shape = SubResource( 2 )
-
-[node name="Area2D" parent="." index="2"]
-visible = false
-position = Vector2( 0.214638, -6.2245 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 rotation = 1.5708
 
 [node name="Right" type="RayCast2D" parent="." index="3"]
-position = Vector2( 0, -8 )
 enabled = true
-cast_to = Vector2( 20, 0 )
+cast_to = Vector2( 10, 0 )
 collision_mask = 6
 
 [node name="Left" type="RayCast2D" parent="." index="4"]
-position = Vector2( 0, -8 )
 enabled = true
-cast_to = Vector2( -20, 0 )
+cast_to = Vector2( -10, 0 )
 collision_mask = 6
 
 [node name="Top" type="RayCast2D" parent="." index="5"]
-position = Vector2( 0, -8 )
 enabled = true
-cast_to = Vector2( 0, -12 )
+cast_to = Vector2( 0, -6 )
 collision_mask = 6
 
 [node name="Down" type="RayCast2D" parent="." index="6"]
-position = Vector2( 0, -8 )
 enabled = true
-cast_to = Vector2( 0, 12 )
+cast_to = Vector2( 0, 6 )
 collision_mask = 6
+
+[node name="Timer" type="Timer" parent="." index="7"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

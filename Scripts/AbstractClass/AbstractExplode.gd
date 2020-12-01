@@ -16,10 +16,12 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_DamageArea_body_entered(body):
-	if(body is AbstractEnemy):
+	if(body.collision_layer == 2):
 		body.die();
-	if(body is Brick):
+	if(body.collision_layer == 64):
 		body.breaked();
+	if(body.collision_layer == 1):
+		body.die()
 	pass # Replace with function body.
 
 func runAnimExplode():
